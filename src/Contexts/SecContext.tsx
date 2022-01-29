@@ -24,4 +24,14 @@ export const GeneralContextSec = createContext<ContextProps>({
 
 const MainReducerSec = (state: InitialStateType, action: ReducerActionType) => ({
   user: userReducer(state.user, action),
-})
+});
+
+export const GeneralProviderSec: React.FC = ({ children }) => {
+  const [state, dispatch] = useReducer(MainReducerSec, initialState);
+
+  return (
+    <GeneralContextSec.Provider value={{ state, dispatch }}>
+      {children}
+    </GeneralContextSec.Provider>
+  );
+};

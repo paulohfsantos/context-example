@@ -4,13 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import GeneralContextProvider from './Contexts/Context';
+import { GeneralProviderSec } from './Contexts/SecContext';
 
 ReactDOM.render(
-  <GeneralContextProvider>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </GeneralContextProvider>,
+  <GeneralProviderSec>
+    <GeneralContextProvider>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </GeneralContextProvider>
+  </GeneralProviderSec>,
   document.getElementById('root')
 );
 

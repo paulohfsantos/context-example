@@ -21,12 +21,6 @@ export const useGeneralContext = () => {
 
 // provider set
 const GeneralContextProvider: React.FC = ({ children }) => {
-  // const [state, setState] = React.useState<ContextProps>(initialState);
-
-  // const updateState = (newState: ContextProps) => {
-  //   setState(newState);
-  // }
-
   return (
     <GeneralContext.Provider value={initialState}>
       {children}
