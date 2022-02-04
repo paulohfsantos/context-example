@@ -1,11 +1,8 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom"
-import { GeneralContextSec } from "../Contexts/SecContext";
-// import { useGeneralContext } from "../Contexts/Context";
+import { useSecContext } from "../Contexts/SecContext";
 
 const Signup: React.FC = () => {
-  // const { name, age } = useGeneralContext();
-  const { state } = useContext(GeneralContextSec);
+  const { state } = useSecContext();
 
   return (
     <div>

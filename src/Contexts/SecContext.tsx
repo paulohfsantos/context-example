@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useReducer, useContext } from "react";
 import { userReducer, userInitialState, UserType } from "../reducers/userReducer";
 import { ReducerActionType } from "../types/reducerActionType";
 
@@ -20,8 +20,12 @@ export const GeneralContextSec = createContext<ContextProps>({
   dispatch: () => {},
 });
 
-// SET PROVIDER
+// custom hook
+export function useSecContext() {
+  return useContext(GeneralContextSec);
+}
 
+// SET PROVIDER
 const MainReducerSec = (state: InitialStateType, action: ReducerActionType) => ({
   user: userReducer(state.user, action),
 });
