@@ -1,4 +1,4 @@
-import { createContext, useReducer, useContext } from "react";
+import React, { createContext, useReducer, useContext, Dispatch } from "react";
 import { userReducer, userInitialState, UserType } from "../reducers/userReducer";
 import { ReducerActionType } from "../types/reducerActionType";
 
@@ -8,7 +8,7 @@ type InitialStateType = {
 
 type ContextProps = {
   state: InitialStateType;
-  dispatch: React.Dispatch<any>;
+  dispatch: Dispatch<any>;
 }
 
 const initialState = {
